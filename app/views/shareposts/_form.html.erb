@@ -1,0 +1,57 @@
+<%= form_with(model: sharepost) do |form| %>
+    <% if sharepost.errors.any? %>
+    <div id="error_explanation">
+    <h2><%= pluralize(sharepost.errors.count,"error") %> prohibited this task from being saved: </h2>
+    <ul>
+    <% sharepost.errors.full_messages.each do |message| %>
+    <li><%=message %></li>
+    <%end%>
+    </ul>
+    </div>
+    <%end%>
+
+    <style>
+        .new{
+            display:inline-block; 
+            background:red; 
+            border-radius:50%; 
+            position:relative;
+            left:38vw;
+            top:22vh;
+        }
+
+        .container{
+            /* display:inline-block;  */
+            border:2px solid black; 
+            background:rgb(11, 25, 69);
+            border-radius:10px;
+            position:relative; 
+            /* left:38vw;  */
+            top:6vh; 
+        }
+    </style>
+
+    
+    <div class="new" style="">
+    <div class="container" style="">
+
+    <h1 style="color:white">Enter the Post:</h1>
+
+    <div class="field col-6 mt-4" style="color:white">
+    <%= form.label :post_title, class: ''%><br>
+    <%= form.text_field :post_title, class: '' %>
+    </div>
+
+    <div class="field col-6 mt-4" style="color:white">
+    <%= form.label :post, class: ''%><br>
+    <%= form.text_area :post, class: '' %>
+    </div>
+
+    <div class="actions mt-4">
+        <%= form.submit class: 'btn btn-primary'%>
+        <%= link_to 'Back', root_path, class: 'btn btn-outline-primary m-2 '%> 
+    </div>
+    </div>
+    </div>
+    
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+
+<%= form_for(model: User, local: true) do |form| %>
+
+<div class="field">
+<%= form.label :firstname%>
+<%= form.text_field :firstname %>
+</div>
+
+<div class="field">
+<%= form.label :lastname%>
+<%= form.text_field :lastname %>
+</div>
+
+<div class="field">
+<%= form.label :email_id%>
+<%= form.text_field :email_id %>
+</div>
+
+<div class="field">
+<%= form.label :password%>
+<%= form.password_field :password %>
+</div>
+
+<div class="field">
+<%= form.label :confirm_password%>
+<%= form.password_field :confirm_password %>
+</div>
+
+<div class="actions">
+    <%= form.submit%>
+    </div>
+<% end %>

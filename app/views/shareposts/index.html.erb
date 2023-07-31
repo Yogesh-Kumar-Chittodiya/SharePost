@@ -1,0 +1,61 @@
+<body style="background:radial-gradient(circle,skyblue,lightblue,white); transition: 2s;">
+
+<nav class="m-2 mt-3 ">
+    <!-- <span style="color:white; background:rgb(11,25,69); padding:15px; font-size:30px;">Dashboard</span> -->
+    <%= link_to 'Dashboard', root_path, class: 'navbar-brand',style: 'color:white;background:rgb(11,25,69); padding:15px;' %>
+        
+    <!-- <a href="users/register" style=""><button>Register</button></a>   -->
+
+    <div class="" style="display:inline; position:relative; left:66%; bottom:5px">
+        <%= link_to 'Login', login_users_path, class: 'btn btn-primary m-4 mt-0 mb-0', style: "background:rgb(11,25,69); font-weight:bold; color:white" %>
+
+        <%= link_to 'Register', register_users_path, class: 'btn btn-primary m-4 mt-0 mb-0', style: "background:rgb(11,25,69); font-weight:bold; color:white" %>
+    </div>
+
+</nav>
+
+<hr style="color:rgb(11,25,69);">
+
+<div class="container m-4 mb-2">
+    <span style="font-size:40px; font-weight:bold; color:rgb(11,25,69);">Posts</span>
+
+<!-- <span class="btn btn-primary m-3 mt-0 mb-0" style="background:red; font-weight:bold;">
+        <%#= link_to '+', controller: :shareposts, action: :new %>
+    </span>
+    <button class= 'btn btn-primary' style="color:red">
+        <%#= link_to '+', controller: :shareposts, action: :new %>
+    </button>  -->
+
+    <%= link_to '+', shareposts_new_path, class: 'btn btn-primary m-4 mt-2', style: "background:rgb(11,25,69); font-weight:bold; color:white;" %>
+
+</div>
+
+<div class="container" style="">
+    <div>
+        <% @shareposts.each do |sharepost| %>
+            <!--<h2><%#= sharepost.post_title %></h2>
+            <p><%#= sharepost.post %></p>-->
+
+            <dl>
+                <dt><%= sharepost.post_title %></dt>
+                <dd><%= sharepost.post %></dd>
+            </dl>
+        <% end %>
+    </div>
+</div>
+
+
+
+
+<div style="background:linear-gradient(white,skyblue,white);text-align:center;">
+<foooter>all &copy; copyrights are reserved</footer>
+</div>
+    
+     <!-- <button><%#= link_to 'Register', controller: :users, action: :register%></button>
+
+    <a href="users/login"><button>login</button></a>
+
+    <%#= link_to 'Register', controller: :shareposts, action: :register %>  -->
+   
+
+</body>

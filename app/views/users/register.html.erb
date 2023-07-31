@@ -1,0 +1,106 @@
+<head>
+    <style>
+        body{
+            background:radial-gradient(circle,skyblue,white,lightblue);
+            transition : 2s;
+        }
+
+        .shape3{
+            width:45vw;
+            height:45vw;
+            /* background:linear-gradient(yellow,red); */
+            background:linear-gradient(white,lightblue);
+            border-radius:50%;  
+            position: relative;
+            top:1.5vw;
+            left:30.5vw;
+        }
+        .shape3:hover{
+            /* transform:rotate(360deg); */
+            transition:0.5s;
+            /* opacity:0.9; */
+            /* background:linear-gradient(orange,yellow); */
+            background:linear-gradient(lightblue,white);
+        }
+
+        .shape2{
+            background:red;
+            display:inline-block;
+            border-radius:50%;
+            position: relative;
+            top:3vw;
+            left:12vw;
+
+        }
+        .shape2:hover{
+            /* transform:rotate(-360deg); */
+            transition:0.5s;
+            /* opacity:1; */
+            /* background:linear-gradient(orange,yellow); */
+        }
+
+        .box{
+            display:inline-block;
+            border:2px solid black; 
+            background:rgb(11,25,69);
+            color:white;
+            border-radius:10px;
+            /* position relative;
+            top:50px; */
+            position: relative;
+            top:3vw;
+            /* left:40vw; */
+        }
+    </style>
+</head>
+
+
+<%= form_with(model: @user) do |form| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count,"error") %> prohibited this task from being saved: </h2>
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%=message %></li>
+                <%end%>
+            </ul>
+        </div>
+    <%end%>
+    <div class="shape3">
+    <div class="shape2">
+    <div class="container mb-4 box" style="border:2px solid black;">
+        <h1 class="mb-2 mt-2">Register</h1>
+    <div class="field">
+        <%= form.label :firstname%><br>
+        <%= form.text_field :firstname %>
+    </div>
+
+    <div class="field mt-2">
+        <%= form.label :lastname%><br>
+        <%= form.text_field :lastname %>
+    </div>
+
+    <div class="field mt-2">
+        <%= form.label :email_id%><br>
+        <%= form.text_field :email_id %>
+    </div>
+
+    <div class="field mt-2">
+        <%= form.label :password%><br>
+        <%= form.password_field :password %>
+    </div>
+
+    <div class="field mt-2">
+        <%= form.label :confirm_password%><br>
+        <%= form.password_field :confirm_password %>
+    </div>
+
+    <div class="actions mt-2">
+        <%= form.submit%>
+        <%= link_to 'Back', root_path, class: 'btn btn-primary m-4 mt-2' %>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<% end%>

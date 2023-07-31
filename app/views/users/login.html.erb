@@ -1,0 +1,57 @@
+<head>
+<style>
+.shape{
+    background:red;
+    display:inline-block;
+    border-radius:50%;
+    position:relative;
+    top:75px;
+    left:30%;
+}
+.shape1{
+    height:100px;
+    width:100px;
+    /* background:yellow; */
+    border-radius:50px;
+    display:inline-block;
+    position:relative;
+    top:15px;
+    left:350px;
+    background:linear-gradient(red,yellow);
+}
+.shape1:hover{
+    transform:rotate(360deg);
+    transition:2s; */
+    opacity:0.5;
+    background:linear-gradient(yellow,red);
+}
+</style>
+</head>
+
+<body style="background:radial-gradient(circle,white,lightblue); transition:2s">
+<%= form_with(model: @user) do |form| %>
+<div class="shape1">
+</div>
+<div class="shape">
+<div class="container mt-4" style= "border:2px solid black; background:rgb(11,25,69); border-radius:10px; ">
+
+    <h1 class="mt-2 mb-2" style="color:white">Login</h1>
+    <div class="field" style="color:white; ">
+        <%= form.label :email_id%><br>
+        <%= form.text_field :email_id %>
+    </div>
+    <br>
+    <div class="field mt-2" style="color:white; ">
+        <%= form.label :password%><br>
+        <%= form.password_field :password %>
+    </div>
+    <br>
+    <div class="actions mt-2" style="">
+        <%= form.submit%>
+        <%= link_to 'Back', root_path, class: 'btn btn-primary m-4 mt-2' %>
+    </div>
+    
+</div>
+</div>
+<% end%>
+</body>

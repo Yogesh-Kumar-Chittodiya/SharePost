@@ -1,0 +1,3 @@
+class Sharepost < ApplicationRecord
+    
+end
